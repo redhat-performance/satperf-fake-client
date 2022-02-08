@@ -1,0 +1,11 @@
+[Unit]
+Description=Renames /etc/rhsm-host and /etc/pki/entitlement-host so we can register container as real host
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "ls /etc/rhsm-host && mv /etc/rhsm-host{,.ORIG}; ls /etc/pki/entitlement-host && mv /etc/pki/entitlement-host{,.ORIG}"
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
