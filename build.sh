@@ -8,6 +8,7 @@ set -xe
 podman build -f rhel8-ubi-init-smallest.Containerfile -t rhel8-ubi-init-smallest --build-arg=ROOT_PASSWORD="$ROOT_PASSWORD" --build-arg=ROOT_PUBLIC_KEY="$ROOT_PUBLIC_KEY" .
 podman build -f rhel8-ubi-init-big_updated.Containerfile -t rhel8-ubi-init-big_updated .
 podman build -f rhel8-ubi-init-big_outdated.Containerfile -t rhel8-ubi-init-big_outdated .
+podman build -f rhel8-ubi-init-utils.Containerfile -t rhel8-ubi-init-utils .
 podman build -f rhel7-ubi-init-smallest.Containerfile -t rhel7-ubi-init-smallest --build-arg=ROOT_PASSWORD="$ROOT_PASSWORD" --build-arg=ROOT_PUBLIC_KEY="$ROOT_PUBLIC_KEY" .
 podman build -f rhel7-ubi-init-big_updated.Containerfile -t rhel7-ubi-init-big_updated .
 podman build -f rhel7-ubi-init-big_outdated.Containerfile -t rhel7-ubi-init-big_outdated .

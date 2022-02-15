@@ -50,6 +50,7 @@ Flavors
 | `rhel8-ubi-init-smallest.Containerfile` | RHEL8 | ubi8/ubi-init | Just basic set of packages to run `sshd` and `subscription-manager` |
 | `rhel8-ubi-init-big_updated.Containerfile` | RHEL8 | ubi8/ubi-init | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
 | `rhel8-ubi-init-big_outdated.Containerfile` | RHEL8 | ubi8/ubi-init | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
+| `rhel8-ubi-init-utils.Containerfile` | RHEL8 | ubi8/ubi-init | Small image which, besides other, contain various helper tools handy when debugging the setup we are using |
 | `rhel7-ubi-init-smallest.Containerfile` | RHEL7 | ubi7/ubi-init | Just basic set of packages to run `sshd` and `subscription-manager` |
 | `rhel7-ubi-init-big_updated.Containerfile` | RHEL7 | ubi7/ubi-init | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
 | `rhel7-ubi-init-big_outdated.Containerfile` | RHEL7 | ubi7/ubi-init | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
