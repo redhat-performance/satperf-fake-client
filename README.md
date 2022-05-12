@@ -48,13 +48,13 @@ Flavors
 | Containerfile                        | OS    | base image | description |
 | ------------------------------------ | ----- | ---------- | ----------- |
 | `rhel8-ubi-init-smallest.Containerfile` | RHEL8 | ubi8/ubi-init | Just basic set of packages to run `sshd` and `subscription-manager` |
-| `rhel8-ubi-init-big_updated.Containerfile` | RHEL8 | ubi8/ubi-init | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
-| `rhel8-ubi-init-big_outdated.Containerfile` | RHEL8 | ubi8/ubi-init | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
-| `rhel8-ubi-init-utils.Containerfile` | RHEL8 | ubi8/ubi-init | Small image which, besides other, contain various helper tools handy when debugging the setup we are using |
-| `rhel8-ubi-init-big_outdated-katello_agent611.Containerfile` | RHEL8 | ubi8/ubi-init | This adds katello related client packages (as of now, it is `katello-agent` and it's dependencies) to the mix |
+| `rhel8-ubi-init-big_updated.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
+| `rhel8-ubi-init-big_outdated.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
+| `rhel8-ubi-init-utils.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Small image which, besides other, contain various helper tools handy when debugging the setup we are using |
+| `rhel8-ubi-init-big_outdated-katello_agent611.Containerfile` | RHEL8 | rhel8-ubi-init-big_outdated | This adds katello related client packages (as of now, it is `katello-agent` and it's dependencies) to the mix |
 | `rhel7-ubi-init-smallest.Containerfile` | RHEL7 | ubi7/ubi-init | Just basic set of packages to run `sshd` and `subscription-manager` |
-| `rhel7-ubi-init-big_updated.Containerfile` | RHEL7 | ubi7/ubi-init | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
-| `rhel7-ubi-init-big_outdated.Containerfile` | RHEL7 | ubi7/ubi-init | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
+| `rhel7-ubi-init-big_updated.Containerfile` | RHEL7 | rhel7-ubi-init-smallest | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
+| `rhel7-ubi-init-big_outdated.Containerfile` | RHEL7 | rhel7-ubi-init-smallest | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
 
 Links
 -----
