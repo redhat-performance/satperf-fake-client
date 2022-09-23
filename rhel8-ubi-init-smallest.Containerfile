@@ -3,6 +3,7 @@ FROM registry.access.redhat.com/ubi8/ubi-init
 MAINTAINER Jan Hutar <jhutar@redhat.com>
 
 RUN INSTALL_PKGS="\
+  hostname \
   less \
   openssh-server \
   subscription-manager \
