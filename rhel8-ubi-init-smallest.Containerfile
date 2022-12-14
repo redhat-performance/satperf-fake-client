@@ -11,8 +11,8 @@ RUN INSTALL_PKGS="\
   " \
   && echo -e "[repo1]\nname=repo1\nbaseurl=https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo1.repo \
   && echo -e "[repo2]\nname=repo2\nbaseurl=https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/appstream/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo2.repo \
-  && echo -e "[repo3]\nname=repo3\nbaseurl=http://download.devel.redhat.com/rhel-8/development/updates/RHEL-8/latest-RHEL-8.6.0/compose/BaseOS/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo3.repo \
-  && echo -e "[repo4]\nname=repo3\nbaseurl=http://download.devel.redhat.com/rhel-8/development/updates/RHEL-8/latest-RHEL-8.6.0/compose/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo4.repo \
+  && echo -e "[repo3]\nname=repo3\nbaseurl=http://download.devel.redhat.com/rhel-8/development/updates/RHEL-8/latest-RHEL-8.7.0/compose/BaseOS/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo3.repo \
+  && echo -e "[repo4]\nname=repo3\nbaseurl=http://download.devel.redhat.com/rhel-8/development/updates/RHEL-8/latest-RHEL-8.7.0/compose/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo4.repo \
   && yum -y install $INSTALL_PKGS \
   && rpm -V --nosize --nofiledigest --nomtime --nomode $INSTALL_PKGS \
   && yum clean all
