@@ -49,6 +49,7 @@ Flavors
 | ------------------------------------ | ----- | ---------- | ----------- |
 | `rhel8-ubi-init-smallest.Containerfile` | RHEL8 | ubi8/ubi-init | Just basic set of packages to run `sshd` and `subscription-manager` |
 | `rhel8-ubi-init-smallest-foreman_ygg_worker.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | This adds foreman_ygg_worker related client packages (as of now, it's `foreman_ygg_worker` and its dependencies) to the mix |
+| `rhel8-ubi-init-smallest-RHC.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Adds RHC (i.e. `rhc` and `rhc-worker-playbook` packages) to the mix to be able to remediate from ConsoleDot |
 | `rhel8-ubi-init-big_updated.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Added extra repository with fake packages and used it to install packages so total number of packages installed is 1000 |
 | `rhel8-ubi-init-big_outdated.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Added extra repository with fake packages and install quite some outdated packages from it so total number of packages is 1000 and it have around 815 applicable updates |
 | `rhel8-ubi-init-utils.Containerfile` | RHEL8 | rhel8-ubi-init-smallest | Small image which, besides other, contain various helper tools handy when debugging the setup we are using |
