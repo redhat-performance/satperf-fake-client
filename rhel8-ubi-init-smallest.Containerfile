@@ -14,7 +14,6 @@ RUN INSTALL_PKGS="\
   && echo -e "[repo4]\nname=repo3\nbaseurl=http://download.devel.redhat.com/released/rhel-8/RHEL-8/8.9.0/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/repo4.repo \
   && yum -y install $INSTALL_PKGS \
   && rpm -V --nosize --nofiledigest --nomtime --nomode $INSTALL_PKGS \
-  && yum install -y http://download.eng.bos.redhat.com/brewroot/vol/rhel-8/packages/insights-client/3.1.7/11.el8/noarch/insights-client-3.1.7-11.el8.noarch.rpm \
   && yum clean all
 
 COPY src/renamer.service /etc/systemd/system/renamer.service
