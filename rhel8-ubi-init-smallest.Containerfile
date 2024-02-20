@@ -4,6 +4,7 @@ MAINTAINER Jan Hutar <jhutar@redhat.com>
 
 RUN INSTALL_PKGS="\
   hostname \
+  insights-client \
   less \
   openssh-server \
   subscription-manager \
