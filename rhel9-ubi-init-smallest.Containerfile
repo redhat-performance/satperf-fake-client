@@ -20,7 +20,7 @@ RUN systemctl enable renamer.service
 ARG ROOT_PASSWORD
 ARG ROOT_PUBLIC_KEY
 
-RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+RUN echo 'PermitRootLogin yes' >/etc/ssh/sshd_config.d/01-local.conf && \
   install -m 600 /dev/null /root/.ssh/authorized_keys && \
   if [[ -n "${ROOT_PUBLIC_KEY}" ]]; then echo "${ROOT_PUBLIC_KEY}" >>/root/.ssh/authorized_keys; fi && \
   if [[ -n "${ROOT_PASSWORD}" ]]; then echo "root:${ROOT_PASSWORD}" | chpasswd; fi && \
