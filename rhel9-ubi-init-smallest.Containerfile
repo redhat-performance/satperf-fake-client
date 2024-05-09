@@ -1,4 +1,6 @@
-FROM registry.access.redhat.com/ubi9/ubi-init:9.3-8
+ARG TAG=latest
+
+FROM registry.access.redhat.com/ubi9/ubi-init:${TAG}
 
 MAINTAINER Pablo Mendez Hernandez <pablomh@redhat.com>
 

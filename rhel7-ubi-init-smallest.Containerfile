@@ -1,4 +1,6 @@
-FROM registry.access.redhat.com/ubi7/ubi-init
+ARG TAG=latest
+
+FROM registry.access.redhat.com/ubi7/ubi-init:${TAG}
 
 MAINTAINER Jan Hutar <jhutar@redhat.com>
 
