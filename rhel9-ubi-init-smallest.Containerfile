@@ -15,10 +15,6 @@ RUN INSTALL_PKGS="\
   rpm -V --nosize --nofiledigest --nomtime --nomode ${INSTALL_PKGS} && \
   dnf clean all
 
-COPY src/renamer.service /etc/systemd/system/renamer.service
-
-RUN systemctl enable renamer.service
-
 ARG ROOT_PASSWORD
 ARG ROOT_PUBLIC_KEY
 
@@ -34,6 +30,10 @@ RUN echo 'PermitRootLogin yes' >/etc/ssh/sshd_config.d/01-local.conf && \
   exit 0
 
 RUN dnf list installed | wc -l
+
+RUN sed -i.orig \
+  's#\(def in_container()\)\(.*:\)#\1\2\n    return False#g' \
+  /usr/lib64/python*/*-packages/rhsm/config.py
 
 WORKDIR /root
 
