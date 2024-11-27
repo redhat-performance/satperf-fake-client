@@ -1,6 +1,7 @@
+ARG REGISTRY=registry.access.redhat.com
 ARG TAG=latest
 
-FROM registry.access.redhat.com/ubi8/ubi-init:${TAG}
+FROM ${REGISTRY}/ubi8/ubi-init:${TAG}
 
 MAINTAINER Jan Hutar <jhutar@redhat.com>
 
