@@ -3,7 +3,7 @@ ARG TAG=latest
 
 FROM ${REGISTRY}/ubi9/ubi-init:${TAG}
 
-MAINTAINER Pablo Mendez Hernandez <pablomh@redhat.com>
+LABEL org.opencontainers.image.authors="Pablo Mendez Hernandez <pablomh@redhat.com>"
 
 RUN INSTALL_PKGS="\
   hostname \
