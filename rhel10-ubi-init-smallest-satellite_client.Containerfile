@@ -4,7 +4,8 @@ LABEL org.opencontainers.image.authors="Pablo Mendez Hernandez <pablomh@redhat.c
 
 ARG REPO_BASE=http://mirror.example.com
 
-RUN echo -e "[rhel-10-beta-for-x86_64-appstream-rpms]\nname=Red Hat Enterprise Linux 10 Beta for x86_64 - AppStream\nbaseurl=${REPO_BASE}/rhel-10/nightly/RHEL-10/latest-RHEL-10.0/compose/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/satellite_client.repo && \
+RUN echo -e "[rhel-10-beta-for-x86_64-baseos-rpms]\nname=Red Hat Enterprise Linux 10 Beta for x86_64 - BaseOS\nbaseurl=${REPO_BASE}/rhel-10/nightly/RHEL-10/latest-RHEL-10.0/compose/BaseOS/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/RHEL.repo && \
+  echo -e "[rhel-10-beta-for-x86_64-appstream-rpms]\nname=Red Hat Enterprise Linux 10 Beta for x86_64 - AppStream\nbaseurl=${REPO_BASE}/rhel-10/nightly/RHEL-10/latest-RHEL-10.0/compose/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >>/etc/yum.repos.d/RHEL.repo && \
   dnf install -y insights-client yggdrasil && \
   dnf clean all
 
