@@ -9,6 +9,10 @@ RUN echo -e "[rhel-10-beta-for-x86_64-baseos-rpms]\nname=Red Hat Enterprise Linu
   dnf install -y insights-client subscription-manager yggdrasil && \
   dnf clean all
 
+RUN sed -i.orig \
+  's#\(def in_container()\)\(.*:\)#\1\2\n    return False#g' \
+  /usr/lib64/python*/*-packages/rhsm/config.py
+
 ARG CLIENT_REPO_BASE=http://mirror.example.com
 
 RUN echo -e "[satellite_client]\nname=Satellite_Client_RHEL10_x86_64\nbaseurl=${CLIENT_REPO_BASE}/Satellite_Client_RHEL10_x86_64/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/satellite_client.repo && \
