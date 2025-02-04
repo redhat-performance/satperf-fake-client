@@ -19,6 +19,8 @@ RUN echo -e "[satellite_client]\nname=Satellite_Client_RHEL10_x86_64\nbaseurl=${
   dnf install -y foreman_ygg_worker && \
   dnf clean all
 
+RUN rm -f /etc/yum.repos.d/*
+
 WORKDIR /root
 
 EXPOSE 22
