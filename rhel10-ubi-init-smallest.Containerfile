@@ -1,7 +1,7 @@
 ARG REGISTRY=registry.access.redhat.com
 ARG TAG=latest
 
-FROM ${REGISTRY}/ubi10-beta/ubi-init:${TAG}
+FROM ${REGISTRY}/ubi10/ubi-init:${TAG}
 
 LABEL org.opencontainers.image.authors="Pablo Mendez Hernandez <pablomh@redhat.com>"
 
