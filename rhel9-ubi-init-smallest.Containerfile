@@ -21,6 +21,7 @@ ARG ROOT_PUBLIC_KEY
 
 RUN echo 'PermitRootLogin yes' >/etc/ssh/sshd_config.d/01-local.conf && \
   if [[ -n "${ROOT_PUBLIC_KEY}" ]]; then \
+    mkdir -m 700 /root/.ssh && \
     install -m 600 /dev/null /root/.ssh/authorized_keys && \
     echo "${ROOT_PUBLIC_KEY}" >>/root/.ssh/authorized_keys; \
   fi && \
