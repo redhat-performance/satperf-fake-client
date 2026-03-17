@@ -13,6 +13,7 @@ ARG INSTALL_PKGS="\
   iputils \
   less \
   openssh-server \
+  podman \
   "
 
 RUN dnf install -y ${INSTALL_PKGS} && \
