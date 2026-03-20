@@ -14,6 +14,7 @@ ARG INSTALL_PKGS="\
   less \
   openssh-server \
   podman \
+  skopeo \
   "
 
 RUN dnf install -y ${INSTALL_PKGS} && \
