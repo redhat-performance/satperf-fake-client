@@ -7,6 +7,7 @@ LABEL org.opencontainers.image.authors="Pablo Mendez Hernandez <pablomh@redhat.c
 
 ARG INSTALL_PKGS="\
   containers-common \
+  flatpak \
   fuse-overlayfs \
   hostname \
   iputils \
