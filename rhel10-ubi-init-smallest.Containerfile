@@ -69,6 +69,13 @@ RUN echo 'PermitRootLogin yes' >/etc/ssh/sshd_config.d/01-local.conf && \
 
 RUN dnf list installed | wc -l
 
+# rhsmcertd does not run in containers so /var/lock/subsys is never created.
+# Without it, the subscription-manager dnf plugin tracebacks on Python 3.12
+# with AttributeError: 'SubscriptionManager' has no attribute 'cp' during
+# post-transaction profile upload. Registration succeeds but the traceback
+# pollutes output and confuses tooling that parses it.
+RUN mkdir -p /var/lock/subsys
+
 RUN sed -i.orig \
   's#\(def in_container()\)\(.*:\)#\1\2\n    return False#g' \
   /usr/lib64/python*/*-packages/rhsm/config.py
