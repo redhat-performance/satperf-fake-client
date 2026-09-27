@@ -8,9 +8,10 @@ RUN echo -e "[rhel-9-for-x86_64-appstream-rpms]\nname=Red Hat Enterprise Linux 9
   dnf install -y insights-client && \
   dnf clean all
 
-ARG CLIENT_REPO_BASE=http://mirror.example.com
+ARG SATCLIENT_REPO_BASE=http://mirror.example.com
+ARG SATCLIENT_PATH=Satellite_Client_RHEL9_x86_64
 
-RUN echo -e "[satellite_client]\nname=Satellite_Client_RHEL9_x86_64\nbaseurl=${CLIENT_REPO_BASE}/Satellite_Client_RHEL9_x86_64/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/satellite_client.repo && \
+RUN echo -e "[satellite_client]\nname=${SATCLIENT_PATH}\nbaseurl=${SATCLIENT_REPO_BASE}/${SATCLIENT_PATH}/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/satellite_client.repo && \
   dnf install -y foreman_ygg_worker && \
   dnf clean all
 
