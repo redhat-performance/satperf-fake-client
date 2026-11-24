@@ -15,7 +15,7 @@ RUN if [ -n "${RHEL_REL}" ]; then \
       echo -e "[rhel-9-for-x86_64-appstream-rpms]\nname=Red Hat Enterprise Linux 9 for x86_64 - AppStream\nbaseurl=${REPO_BASE}/RHEL-9/9.4.0/AppStream/x86_64/os/\ngpgcheck=0\nenabled=1" >/etc/yum.repos.d/RHEL.repo; \
     fi && \
     if [ "${DO_UPDATE}" = "true" ]; then dnf update -y; fi && \
-    dnf install -y insights-client subscription-manager yggdrasil && \
+    dnf install -y insights-client && \
     dnf clean all
 
 RUN sed -i.orig \
